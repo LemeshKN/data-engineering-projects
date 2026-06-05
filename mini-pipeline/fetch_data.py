@@ -1,8 +1,11 @@
 import requests
 import json
+from dotenv import load_dotenv
+import os
 
-# Your API key from cricapi.com
-API_KEY = "78bcad75-8cc6-4dc7-aba1-85bc69ad2598"
+# Load API key from .env file
+load_dotenv()
+API_KEY = os.getenv("CRICKET_API_KEY")
 
 # URL to get current cricket matches
 url = f"https://api.cricapi.com/v1/currentMatches?apikey={API_KEY}&offset=0"
@@ -14,6 +17,6 @@ response = requests.get(url)
 if response.status_code == 200:
     data = response.json()
     print("Data fetched successfully!")
-    print(json.dumps(data, indent=2))  # prints clean readable JSON
+    print(json.dumps(data, indent=2))
 else:
     print(f"Failed to fetch data. Status code: {response.status_code}")
