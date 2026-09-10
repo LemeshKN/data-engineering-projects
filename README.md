@@ -41,11 +41,11 @@ mini-pipeline/
 5. Run the pipeline: python pipeline.py
 
 ## Sample output
-
+```
 ============================================================
   CRICKET DATA PIPELINE STARTING
 ============================================================
-
+```
 [Step 1/4] Fetching live match data from CricAPI...
   Fetched: 25 matches
 
