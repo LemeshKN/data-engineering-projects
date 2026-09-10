@@ -59,7 +59,7 @@ Inserted: 13 new rows | Skipped (duplicates or missing ID): 12
 [Step 4/4] Running analytical queries on stored data...
 
 ============================================================
-  Total matches in database
+  ## Total matches in database
 ============================================================
 total_matches
 ------------------------------------------------------------
