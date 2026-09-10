@@ -2,8 +2,7 @@
 
 # Cricket Data Pipeline
 
-A data engineering mini-project that fetches live cricket match data, 
-cleans it, stores it in a PostgreSQL database, and runs SQL queries on it.
+A lightweight, automated Python ETL pipeline that fetches live match data from external REST APIs, cleans and transforms it using Pandas, loads it into a relational PostgreSQL database, and executes analytical SQL queries.
 
 ## What this pipeline does
 
