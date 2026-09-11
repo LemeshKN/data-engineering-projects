@@ -11,7 +11,18 @@ API_KEY = os.getenv("CRICKET_API_KEY")
 url = f"https://api.cricapi.com/v1/currentMatches?apikey={API_KEY}&offset=0"
 
 # Fetch the data
-response = requests.get(url)
+try:
+    response = requests.get(url)
+    response.raise_for_status()
+except requests.exceptions.Timeout:
+    print("API request timed out. Check your internet connection.")
+    exit()
+except requests.exceptions.ConnectionError:
+    print("Connection error - cannot reach CricAPI.")
+    exit()
+except requests.exceptions.HTTPError as e:
+    print(f"HTTP error: {e.response.status_code}")
+    exit()
 
 # Check if it worked
 if response.status_code == 200:
